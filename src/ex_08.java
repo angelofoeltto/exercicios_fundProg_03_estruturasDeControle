@@ -18,23 +18,27 @@ import java.util.Scanner;
  * @author neo
  * @create 04/08/2019
  */
-public class ex_01 {
+public class ex_08 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    int num1 = 0;
-    int num2 = 0;
+    final int TAM = 2;
 
-    System.out.println("\nMaior número\n");
-    System.out.print("Informe um número inteiro: ");
-    num1 = imput.nextInt();
+    float nota[] = new float[TAM];
+    float media = 0;
 
-    System.out.print("Informe um número inteiro: ");
-    num2 = imput.nextInt();
+    System.out.println("\nNotas do semestre");
+    for (int i = 0; i < TAM; i++) {
+      System.out.printf("Informe nota %d: ", (i + 1));
+      nota[i] = imput.nextInt();
+      media += nota[i];
+    }
 
-    if (num1 > num2)
-      System.out.printf("\nO número %d é maior que o número %d.", num1, num2);
-    else
-      System.out.printf("\nO número %d é maior que o número %d.", num2, num1);
+    media /= TAM;
+
+    System.out.println("Informações do semestre...");
+    for (int i = 0; i < TAM; i++)
+      System.out.printf("\nNota %d: %.1f", (i + 1), nota[i]);
+    System.out.printf("\nMédia: %.1f", media);
   }
 }

@@ -18,23 +18,19 @@ import java.util.Scanner;
  * @author neo
  * @create 04/08/2019
  */
-public class ex_01 {
+public class ex_03 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    int num1 = 0;
-    int num2 = 0;
+    char sexo;
 
-    System.out.println("\nMaior número\n");
-    System.out.print("Informe um número inteiro: ");
-    num1 = imput.nextInt();
+    System.out.println("\nVerificando sexo\n");
+    System.out.print("Informe sexo ou apenas a primeira letra: ");
+    sexo = imput.next().toUpperCase().charAt(0);
 
-    System.out.print("Informe um número inteiro: ");
-    num2 = imput.nextInt();
-
-    if (num1 > num2)
-      System.out.printf("\nO número %d é maior que o número %d.", num1, num2);
+    if (sexo == 'F')
+      System.out.println("Sexo: Feminino.");
     else
-      System.out.printf("\nO número %d é maior que o número %d.", num2, num1);
+      System.out.println("Sexo: Masculino.");
   }
 }

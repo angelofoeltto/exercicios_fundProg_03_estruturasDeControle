@@ -18,23 +18,31 @@ import java.util.Scanner;
  * @author neo
  * @create 04/08/2019
  */
-public class ex_01 {
+public class ex_07 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    int num1 = 0;
-    int num2 = 0;
+    final int TAM = 3;
 
-    System.out.println("\nMaior número\n");
-    System.out.print("Informe um número inteiro: ");
-    num1 = imput.nextInt();
+    int num[] = new int[TAM];
 
-    System.out.print("Informe um número inteiro: ");
-    num2 = imput.nextInt();
+    System.out.println("\nOrdem crescente\n");
+    for (int i = 0; i < TAM; i++) {
+      System.out.print("Informe um número inteiro: ");
+      num[i] = imput.nextInt();
+    }
 
-    if (num1 > num2)
-      System.out.printf("\nO número %d é maior que o número %d.", num1, num2);
-    else
-      System.out.printf("\nO número %d é maior que o número %d.", num2, num1);
+    for (int i = 0; i < TAM; i++)
+      for (int j = 1; j < (TAM - i); j++)
+        if(num[j - 1] > num[j]) {
+          int aux = num[j - 1];
+          num[j - 1] = num[j];
+          num[j] = aux;
+        }
+
+    System.out.print("\nNúmeros em ordem crescente: ");
+    for (int n: num) {
+      System.out.printf("%d ", n);
+    }
   }
 }

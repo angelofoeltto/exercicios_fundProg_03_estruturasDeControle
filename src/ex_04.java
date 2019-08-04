@@ -18,23 +18,19 @@ import java.util.Scanner;
  * @author neo
  * @create 04/08/2019
  */
-public class ex_01 {
+public class ex_04 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    int num1 = 0;
-    int num2 = 0;
+    int ano = 0;
 
-    System.out.println("\nMaior número\n");
-    System.out.print("Informe um número inteiro: ");
-    num1 = imput.nextInt();
+    System.out.println("\nAno bixesto\n");
+    System.out.print("Informe ano (aaaa): ");
+    ano = imput.nextInt();
 
-    System.out.print("Informe um número inteiro: ");
-    num2 = imput.nextInt();
-
-    if (num1 > num2)
-      System.out.printf("\nO número %d é maior que o número %d.", num1, num2);
+    if ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0)))
+      System.out.printf("\nAno %d é bixesto", ano);
     else
-      System.out.printf("\nO número %d é maior que o número %d.", num2, num1);
+      System.out.printf("\nAno %d não é bixesto", ano);
   }
 }
