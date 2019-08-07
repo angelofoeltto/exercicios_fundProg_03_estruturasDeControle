@@ -12,29 +12,29 @@
  * software and other kinds of works.
  */
 
+package code;
+
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 /**
  * @author neo
- * @create 04/08/2019
+ * @create 07/08/2019
  */
-public class ex_05 {
+public class ex_20 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
+    GregorianCalendar calendar = new GregorianCalendar();
 
-    char letra;
+    int ano = 0;
 
-    System.out.println("\nDeterminando vogal\n");
-    System.out.print("Informe letra: ");
-    letra = imput.next().toUpperCase().charAt(0);
+    System.out.println("\nAno bissexto\n");
+    System.out.print("Informe ano (aaaa): ");
+    ano = imput.nextInt();
 
-    if (letra == 'A'
-     && letra == 'E'
-     && letra == 'I'
-     && letra == 'O'
-     && letra == 'U')
-      System.out.println("Letra é uma vogal.");
+    if (calendar.isLeapYear(ano))
+      System.out.println("O é bissesxto.");
     else
-      System.out.println("Letra não é uma vogal.");
+      System.out.println("O não é bissesxto.");
   }
 }

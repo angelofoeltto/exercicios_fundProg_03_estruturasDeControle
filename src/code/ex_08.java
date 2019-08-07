@@ -12,25 +12,33 @@
  * software and other kinds of works.
  */
 
-import java.util.Scanner;
+package code;import java.util.Scanner;
 
 /**
  * @author neo
  * @create 04/08/2019
  */
-public class ex_04 {
+public class ex_08 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    int ano = 0;
+    final int TAM = 2;
 
-    System.out.println("\nAno bixesto\n");
-    System.out.print("Informe ano (aaaa): ");
-    ano = imput.nextInt();
+    float nota[] = new float[TAM];
+    float media = 0;
 
-    if ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0)))
-      System.out.printf("\nAno %d é bixesto", ano);
-    else
-      System.out.printf("\nAno %d não é bixesto", ano);
+    System.out.println("\nNotas do semestre");
+    for (int i = 0; i < TAM; i++) {
+      System.out.printf("Informe nota %d: ", (i + 1));
+      nota[i] = imput.nextInt();
+      media += nota[i];
+    }
+
+    media /= TAM;
+
+    System.out.println("Informações do semestre...");
+    for (int i = 0; i < TAM; i++)
+      System.out.printf("\nNota %d: %.1f", (i + 1), nota[i]);
+    System.out.printf("\nMédia: %.1f", media);
   }
 }

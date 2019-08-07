@@ -12,13 +12,13 @@
  * software and other kinds of works.
  */
 
-import java.util.Scanner;
+package code;import java.util.Scanner;
 
 /**
  * @author neo
- * @create 04/08/2019
+ * @create 07/08/2019
  */
-public class ex_08 {
+public class ex_16 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
@@ -26,6 +26,7 @@ public class ex_08 {
 
     float nota[] = new float[TAM];
     float media = 0;
+    String situacao = "";
 
     System.out.println("\nNotas do semestre");
     for (int i = 0; i < TAM; i++) {
@@ -36,9 +37,17 @@ public class ex_08 {
 
     media /= TAM;
 
-    System.out.println("Informações do semestre...");
+    if (media >= 0 && media < 3)
+      situacao = " -> Reprovado";
+    else
+    if (media >= 3 && media < 7)
+      situacao = " -> Em Exame";
+    else
+      situacao = " -> Aprovado";
+
+    System.out.println("\nInformações do semestre...");
     for (int i = 0; i < TAM; i++)
       System.out.printf("\nNota %d: %.1f", (i + 1), nota[i]);
-    System.out.printf("\nMédia: %.1f", media);
+    System.out.printf("\nMédia: %.1f %s", media, situacao);
   }
 }

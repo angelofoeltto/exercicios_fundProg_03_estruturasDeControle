@@ -12,25 +12,25 @@
  * software and other kinds of works.
  */
 
-import java.util.Scanner;
+package code;import java.util.Scanner;
 
 /**
  * @author neo
  * @create 04/08/2019
  */
-public class ex_03 {
+public class ex_04 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    char sexo;
+    int ano = 0;
 
-    System.out.println("\nVerificando sexo\n");
-    System.out.print("Informe sexo ou apenas a primeira letra: ");
-    sexo = imput.next().toUpperCase().charAt(0);
+    System.out.println("\nAno bixesto\n");
+    System.out.print("Informe ano (aaaa): ");
+    ano = imput.nextInt();
 
-    if (sexo == 'F')
-      System.out.println("Sexo: Feminino.");
+    if ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0)))
+      System.out.printf("\nAno %d é bixesto", ano);
     else
-      System.out.println("Sexo: Masculino.");
+      System.out.printf("\nAno %d não é bixesto", ano);
   }
 }

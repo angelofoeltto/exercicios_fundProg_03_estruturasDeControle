@@ -12,7 +12,7 @@
  * software and other kinds of works.
  */
 
-import java.util.Scanner;
+package code;import java.util.Scanner;
 
 /**
  * @author neo

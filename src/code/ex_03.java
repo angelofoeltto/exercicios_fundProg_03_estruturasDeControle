@@ -12,25 +12,25 @@
  * software and other kinds of works.
  */
 
-import java.util.Scanner;
+package code;import java.util.Scanner;
 
 /**
  * @author neo
  * @create 04/08/2019
  */
-public class ex_06 {
+public class ex_03 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    int num1 = 0;
+    char sexo;
 
-    System.out.println("\nPar ou ímpar\n");
-    System.out.print("Informe um número inteiro: ");
-    num1 = imput.nextInt();
+    System.out.println("\nVerificando sexo\n");
+    System.out.print("Informe sexo ou apenas a primeira letra: ");
+    sexo = imput.next().toUpperCase().charAt(0);
 
-    if (num1 % 2 == 0)
-      System.out.printf("\nO número %d é par e agora é ímpar (%d).", num1, (num1 + 1));
+    if (sexo == 'F')
+      System.out.println("Sexo: Feminino.");
     else
-      System.out.printf("\nO número %d é impar e agora é par (%d).", num1, (num1 + 1));
+      System.out.println("Sexo: Masculino.");
   }
 }

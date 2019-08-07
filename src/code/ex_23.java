@@ -12,29 +12,37 @@
  * software and other kinds of works.
  */
 
+package code;
+
 import java.util.Scanner;
 
 /**
  * @author neo
- * @create 04/08/2019
+ * @create 07/08/2019
  */
-public class ex_01 {
+public class ex_23 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    int num1 = 0;
-    int num2 = 0;
+    final int TAM = 3;
 
-    System.out.println("\nMaior número\n");
-    System.out.print("Informe um número inteiro: ");
-    num1 = imput.nextInt();
+    int idade[]  = new int[TAM];
+    double media = 0;
 
-    System.out.print("Informe um número inteiro: ");
-    num2 = imput.nextInt();
+    System.out.println("\nOMédia de Idade\n");
+    for (int i = 0; i < TAM; i++) {
+      System.out.print("Informe idade do aluno: ");
+      idade[i] = imput.nextInt();
+      media += idade[i];
+    }
 
-    if (num1 > num2)
-      System.out.printf("\nO número %d é maior que o número %d.", num1, num2);
+    System.out.print("\nMédia de idade dos alunos\n");
+    if (media < 25)
+      System.out.println("Turma Jovem");
     else
-      System.out.printf("\nO número %d é maior que o número %d.", num2, num1);
+      if (media >= 25 && media < 40)
+        System.out.println("Turma Adulta");
+      else
+        System.out.println("Turma Idosa");
   }
 }
