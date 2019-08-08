@@ -18,21 +18,51 @@ import java.util.Scanner;
 
 /**
  * @author neo
- * @create 07/08/2019
+ * @create 08/08/2019
  */
 public class ex_27 {
   public static void main(String[] args) {
     Scanner imput = new Scanner(System.in);
 
-    double num = 0;
+    double num       = 0;
+    double num1      = 0;
+    double resultado = 0;
+    char operacao;
 
     System.out.println("\nNúmero imteiro ou decimal\n");
     System.out.print("Informe um número: ");
     num = imput.nextDouble();
+    System.out.print("Informe um número: ");
+    num1 = imput.nextDouble();
+    System.out.print("Informe operaçã0 (+ - / *): ");
+    operacao = imput.next().charAt(0);
 
-    if (num == (int)num)
-      System.out.printf("\nO número %d é inteiro.", num);
+    switch (operacao) {
+      case '+':
+        resultado = num + num1;
+        break;
+      case '-':
+        resultado = num - num1;
+        break;
+      case '*':
+        resultado = num * num1;
+        break;
+      case '/':
+        resultado = num / num1;
+        break;
+    }
+
+    if (resultado == (int)resultado)
+      System.out.printf("\nO número %d é inteiro.", resultado);
     else
-      System.out.printf("\nO número %d é decimal.", num);
+      System.out.printf("\nO número %d é decimal.", resultado);
+    if (resultado >= 0)
+      System.out.printf("\nO número %d é positivo.", resultado);
+    else
+      System.out.printf("\nO número %d é negativo.", resultado);
+    if (resultado % 2 == 0)
+      System.out.printf("\nO número %d é par.", resultado);
+    else
+      System.out.printf("\nO número %d é ímpar.", resultado);
   }
 }
